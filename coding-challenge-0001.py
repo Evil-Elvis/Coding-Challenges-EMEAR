@@ -29,13 +29,19 @@ print('Your task is to guess a number between 10 and 99 based on the sum and pro
 print('Sum of digits: ', sum_of_digits)
 print('Product of digits: ', product_of_digits)
 
+try:
+    while True:
+        guess = int(input('Guess the random_number: '))
+        if guess == random_number:
+            print('Congratulations! {} is the correct number!'.format(random_number))
+            break
+        elif guess < random_number:
+            print('random_number is larger')
+        else:
+            print('random_number is smaller')
 
-while True:
-    guess = int(input('Guess the random_number: '))
-    if guess == random_number:
-        print('Congratulations! {} is the correct number!'.format(random_number))
-        break
-    elif guess < random_number:
-        print('random_number is larger')
-    else:
-        print('random_number is smaller')
+except KeyboardInterrupt:
+
+    print("Press 0 to terminate while statement")
+
+    pass
