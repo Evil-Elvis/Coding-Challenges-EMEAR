@@ -17,7 +17,7 @@ product_of_digits = (0)
 
 from random import randint
 
-random_number = (randint(10,99))
+random_number = randint(10,99)
 random_number_str = str(random_number)
 digit_1 = int(random_number_str[0])
 digit_2 = int(random_number_str[1])
