@@ -25,8 +25,10 @@ digit_2 = int(random_number_str[1])
 sum_of_digits = digit_1 + digit_2
 product_of_digits = digit_1 * digit_2
 
-print(sum_of_digits)
-print(product_of_digits)
+print('Your task is to guess a number between 10 and 99 based on the sum and product of the two digits.') 
+print('Sum of digits: ', sum_of_digits)
+print('Product of digits: ', product_of_digits)
+
 
 while True:
     guess = int(input('Guess the random_number: '))
