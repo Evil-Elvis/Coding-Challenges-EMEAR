@@ -11,9 +11,9 @@ Compare this number with the random value and inform the user either it is highe
 In event the user number matches with the random number then congrats the user :)
 """
 # defining variable
-random_number = (0)
-sum_of_digits = (0)
-product_of_digits = (0)
+random_number = 0
+sum_of_digits = 0
+product_of_digits = 0
 
 # import random module
 from random import randint
