@@ -1,0 +1,25 @@
+"""
+Given a list of well formatted texts [fields separated by semicolon] -
+Build a dictionary with below requirements :
++ Each element of the list will be represented as a (key,value) into the dictionary.
++ The Key should be the first element of the text and the Value should be the full text itself.
+
+Check Example : 
+
+list_of_text = ["0001;02-03-20 13:00;In-progress", "0002;02-04-20 13:00;Done",  "0003;02-05-20 13:00;Not-Started"]
+
+final_result_dict_of_texts = {"0001":"0001;02-03-20 13:00;In-progress", "0002":"0002;02-04-20 13:00;Done", "0003":"0003;02-05-20 13:00;Not-Started"}
+"""
+
+
+list_of_text = ["0001;02-03-20 13:00;In-progress", "0002;02-04-20 13:00;Done",  "0003;02-05-20 13:00;Not-Started"]
+
+final_result_dict_of_texts = {}
+
+for list_item in list_of_text:
+    dict_key = str(list_item).split(';')[0]
+    dict_val = str(list_item).split(';')[1:]
+    final_result_dict_of_texts[dict_key] = dict_val
+    
+print('final: ', final_result_dict_of_texts)
+
