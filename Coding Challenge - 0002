@@ -18,7 +18,7 @@ final_result_dict_of_texts = {}
 
 for list_item in list_of_text:
     dict_key = str(list_item).split(';')[0]
-    dict_val = str(list_item).split(';')[1:]
+    dict_val = str(list_item)
     final_result_dict_of_texts[dict_key] = dict_val
     
 print('final: ', final_result_dict_of_texts)
