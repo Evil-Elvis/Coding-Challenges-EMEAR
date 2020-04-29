@@ -14,7 +14,7 @@ def func_single_multiplication(number):
     for i in range(1,11):
         print('{} x {} = '.format(i, number), i*number)
         
-func_single_multiplication(int(input('Enter number: ')))
+func_single_multiplication(int(input('Enter number to multiply with range 1-10: ')))
 
 def func_many_multiplication(number):
     for i in range(1,number+1,1):
