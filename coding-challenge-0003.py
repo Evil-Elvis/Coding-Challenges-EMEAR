@@ -12,7 +12,7 @@ Please notice that the function called func_many_multiplication should use the f
 
 def func_single_multiplication(number):
     for i in range(1,11):
-        print('{} x {} = '.format(i, number), i*number)
+        print('{0:2d} x {0:2d} = '.format(i, number), i*number)
         
 func_single_multiplication(int(input('Enter number to multiply with range 1-10: ')))
 
@@ -22,18 +22,3 @@ def func_many_multiplication(number):
         print('\n')
 
 func_many_multiplication(int(input('Enter number for many multiplication tables: ')))
-
-# create a dictionary with number as key and results of multiplication as values. 
-# Problem: only one value (result of number x 10) is returned, not a list of the 10 multiplications
-
-dict={}
-def func_single_multiplication2(number):
-    for i in range(1,11):
-        v= i*number
-        dict[number] = v
-    return(dict)
-
-
-
-func_single_multiplication2(int(input('Enter number: ')))
-print(dict)
