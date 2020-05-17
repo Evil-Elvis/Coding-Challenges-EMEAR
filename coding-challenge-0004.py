@@ -74,7 +74,7 @@ def determine_parity_2(det_par_2):
 if __name__ == '__main__':
 
     #define global variables
-    txt = input('Please type something: ')
+    txt = 'try to solve that challenge - just get a try 0004.'
     dict_txt = {}
 
     #call functions
