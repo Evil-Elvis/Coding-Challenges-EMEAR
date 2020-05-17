@@ -21,69 +21,79 @@ For the first pair, if you use (occurrence, parity) then for the next you should
 
 """
 
-txt = input('Please type something: ')
+def no_of_char(txt):
+    txt_len = len(txt)
+    return txt_len
 
-#1/ The total number of characters inside his/her typing.
-txt_len = len(txt)
-print('1/ The total number of characters inside his/her typing: ', txt_len)
+def list_of_char(txt):
+    word_set = set(txt)
+    return word_set
 
-#2/ The list of characters used inside his/her typing
-word_set= set(txt)
-print('2/ The list of characters used inside his/her typing (i.e. a set): ', word_set)
-
-word_list=list(txt)
-print('2/ The list of characters used inside his/her typing: ', word_list)
-
-#3/ A dictionary in which each pair represents a character with its occurrences.
-k = ()
-v = 0
-d = {}
-for k in list(txt):
-    if k in d:
-        d[k] += 1
-    else: d[k] = 1
-print('3/ A dictionary in which each pair represents a character with its occurrences: ', d)
-
-#4/ The dictionary in which each pair represents a character with a tuple composed of its attributes above (occurrnces and parity).
-
-
-def determine_parity(d_f):
-    for k,v in d_f.items():
-        i=1
-        if v%2 == 0:
-            d_f_result[k] = v,'even'
+def dict_char_occ(txt):
+    k = ()
+    v = 0
+    d = {}
+    for k in list(txt):
+        if k in d:
+            d[k] += 1
         else:
-            d_f_result[k] = v,'odd'
-    return d_f_result[k]
-        
-         
-d_f_result = {}
-d_f_result_5 = {}
+            d[k] = 1
+    return(d)
 
+def determine_parity_1(det_par):
+    #local variable
+    dic_det_par = {}
 
-#5/ Alternate the position of occurences and parity while building that latest dictionary.
-def determine_parity_5(d_f_5):
-    i=0
-    for k,v in d_f_5.items():
+    for k, v in det_par.items():
+        if v % 2 == 0:
+            dic_det_par[k] = v, 'even'
+        else:
+            dic_det_par[k] = v, 'odd'
+    return dic_det_par
+
+def determine_parity_2(det_par_2):
+    #local variables
+    i = 0
+    dic_det_par_2 = {}
+
+    for k, v in det_par_2.items():
         i += 1
-        if i%2 == 0:
-            if v%2 == 0:
-                d_f_result_5[k] = v,'even'
+        if i % 2 == 0:
+            if v % 2 == 0:
+                dic_det_par_2[k] = v, 'even'
             else:
-                d_f_result_5[k] = v,'odd'
-                
+                dic_det_par_2[k] = v, 'odd'
         else:
-            if v%2 == 0:
-                d_f_result_5[k] = 'even', v
+            if v % 2 == 0:
+                dic_det_par_2[k] = 'even', v
             else:
-                d_f_result_5[k] = 'odd', v
-    
-    return d_f_result_5[k]
+                dic_det_par_2[k] = 'odd', v
 
-determine_parity(d)
-print('4/ The dictionary in which each pair represents a character with a tuple composed of its attributes above (occurrences and parity): ', d_f_result)
+    return dic_det_par_2
 
-determine_parity_5(d)
-print('5/ Alternate the position of occurences and parity while building that latest dictionary:', d_f_result_5) 
+if __name__ == '__main__':
 
+    #define global variables
+    txt = input('Please type something: ')
+    dict_txt = {}
 
+    #call functions
+    # 1/ The total number of characters inside his/her typing.
+    txt_len = no_of_char(txt)
+    print('1/ The total number of characters inside his/her typing: ', txt_len)
+
+    # 2/ The list of characters used inside his/her typing
+    word_set = list_of_char(txt)
+    print('2/ The list of characters used inside his/her typing (i.e. a set): ', word_set)
+
+    # 3/ A dictionary in which each pair represents a character with its occurrences.
+    d = dict_char_occ(txt)
+    print('3/ A dictionary in which each pair represents a character with its occurrences: ', d)
+
+    # 4/ The dictionary in which each pair represents a character with a tuple composed of its attributes above (occurrnces and parity).
+    d1_det_par = determine_parity_1(d)
+    print('4/ The dictionary in which each pair represents a character with a tuple: ', d1_det_par)
+
+    # 5/ Alternate the position of occurences and parity while building that latest dictionary.
+    d2_det_par = determine_parity_2(d)
+    print('5/ Alternate the position of occurences and parity while building that latest dictionary:', d2_det_par)
