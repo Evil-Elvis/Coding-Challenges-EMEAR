@@ -79,21 +79,21 @@ if __name__ == '__main__':
 
     #call functions
     # 1/ The total number of characters inside his/her typing.
-    txt_len = no_of_char(txt)
-    print('1/ The total number of characters inside his/her typing: ', txt_len)
+    sol_1 = no_of_char(txt)
+    print('1/ The total number of characters inside his/her typing: ', sol_1)
 
     # 2/ The list of characters used inside his/her typing
-    word_set = list_of_char(txt)
-    print('2/ The list of characters used inside his/her typing (i.e. a set): ', word_set)
+    sol_2 = list_of_char(txt)
+    print('2/ The list of characters used inside his/her typing (i.e. a set): ', sol_2)
 
     # 3/ A dictionary in which each pair represents a character with its occurrences.
     d = dict_char_occ(txt)
     print('3/ A dictionary in which each pair represents a character with its occurrences: ', d)
 
     # 4/ The dictionary in which each pair represents a character with a tuple composed of its attributes above (occurrnces and parity).
-    d1_det_par = determine_parity_1(d)
-    print('4/ The dictionary in which each pair represents a character with a tuple: ', d1_det_par)
+    sol_4 = determine_parity_1(d)
+    print('4/ The dictionary in which each pair represents a character with a tuple: ', sol_4)
 
     # 5/ Alternate the position of occurences and parity while building that latest dictionary.
-    d2_det_par = determine_parity_2(d)
-    print('5/ Alternate the position of occurences and parity while building that latest dictionary:', d2_det_par)
+    sol_5 = determine_parity_2(d)
+    print('5/ Alternate the position of occurences and parity while building that latest dictionary:', sol_5)
