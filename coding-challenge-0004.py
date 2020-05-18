@@ -21,13 +21,18 @@ For the first pair, if you use (occurrence, parity) then for the next you should
 
 """
 
+# global variables
+
+dict_of_chars_occurences = {}
+
 def no_of_char(txt):
     txt_len = len(txt)
     return txt_len
 
 def list_of_char(txt):
     word_set = set(txt)
-    return word_set
+    list_set = list(word_set)
+    return list_set
 
 def dict_char_occ(txt):
     k = ()
@@ -71,29 +76,37 @@ def determine_parity_2(det_par_2):
 
     return dic_det_par_2
 
+
+def main():
+    try:
+        global dict_of_chars_occurences
+        # define global variables
+        txt = 'try to solve that challenge - just get a try 0004.'
+        dict_txt = {}
+
+        # call functions
+        # 1/ The total number of characters inside his/her typing.
+        sol_1 = no_of_char(txt)
+        print('1/ The total number of characters inside his/her typing: ', sol_1)
+
+        # 2/ The list of characters used inside his/her typing
+        sol_2 = list_of_char(txt)
+        print('2/ The list of characters used inside his/her typing (i.e. a set): ', sol_2)
+
+        # 3/ A dictionary in which each pair represents a character with its occurrences.
+        dict_of_chars_occurences = dict_char_occ(txt)
+        print('3/ A dictionary in which each pair represents a character with its occurrences: ', dict_of_chars_occurences)
+
+        # 4/ The dictionary in which each pair represents a character with a tuple composed of its attributes above (occurrnces and parity).
+        sol_4 = determine_parity_1(dict_of_chars_occurences)
+        print('4/ The dictionary in which each pair represents a character with a tuple: ', sol_4)
+
+        # 5/ Alternate the position of occurences and parity while building that latest dictionary.
+        sol_5 = determine_parity_2(dict_of_chars_occurences)
+        print('5/ Alternate the position of occurences and parity while building that latest dictionary:', sol_5)
+
+    except Exception as err:
+        print("something went wrong - errmsg : ", err)
+
 if __name__ == '__main__':
-
-    #define global variables
-    txt = 'try to solve that challenge - just get a try 0004.'
-    dict_txt = {}
-
-    #call functions
-    # 1/ The total number of characters inside his/her typing.
-    sol_1 = no_of_char(txt)
-    print('1/ The total number of characters inside his/her typing: ', sol_1)
-
-    # 2/ The list of characters used inside his/her typing
-    sol_2 = list_of_char(txt)
-    print('2/ The list of characters used inside his/her typing (i.e. a set): ', sol_2)
-
-    # 3/ A dictionary in which each pair represents a character with its occurrences.
-    d = dict_char_occ(txt)
-    print('3/ A dictionary in which each pair represents a character with its occurrences: ', d)
-
-    # 4/ The dictionary in which each pair represents a character with a tuple composed of its attributes above (occurrnces and parity).
-    sol_4 = determine_parity_1(d)
-    print('4/ The dictionary in which each pair represents a character with a tuple: ', sol_4)
-
-    # 5/ Alternate the position of occurences and parity while building that latest dictionary.
-    sol_5 = determine_parity_2(d)
-    print('5/ Alternate the position of occurences and parity while building that latest dictionary:', sol_5)
+    main()
